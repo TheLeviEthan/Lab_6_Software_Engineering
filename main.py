@@ -7,7 +7,6 @@ Created 10-25-23
 
 new_password = ""
 
-
 def print_menu():
     print("Menu")
     print("-------------")
@@ -28,7 +27,16 @@ def encode(pwd):
 
 
 def decode(pwd):
-    pass
+    global new_password
+    new_password = ''
+    for num in pwd:
+        val = int(num)
+        val -= 3
+        if val < 0:
+            val += 10
+        new_password += str(val)
+    return new_password
+
 
 
 while __name__ == "__main__":
